@@ -1,7 +1,7 @@
 {
     "name": "faustbrian/oboom-php-client",
     "description": "A OBOOM Client for PHP",
-    "keywords": ["api", "faustbrian", "faustbrian-oboom", "oboom", "Brian Faust", "faustbrian"],
+    "keywords": ["api", "oboom", "Brian Faust", "faustbrian"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
