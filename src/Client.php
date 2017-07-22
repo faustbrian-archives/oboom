@@ -3,7 +3,7 @@
 /*
  * This file is part of OBOOM PHP Client.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@brianfaust.me>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,12 +11,38 @@
 
 namespace BrianFaust\Oboom;
 
-use BrianFaust\Unified\AbstractClient;
+use BrianFaust\Http\Http;
 
-class Client extends AbstractClient
+class Client
 {
-    protected function getServiceProvider()
+    /**
+     * @var string
+     */
+    public $token;
+
+    /**
+     * Create a new client instance.
+     *
+     * @param string $token
+     */
+    public function __construct(string $token)
     {
-        return ServiceProvider::class;
+        $this->token = $token;
+    }
+
+    /**
+     * Create a new API service instance.
+     *
+     * @param string $name
+     *
+     * @return \BrianFaust\Oboom\API\AbstractAPI
+     */
+    public function api(string $name): API\AbstractAPI
+    {
+        $client = Http::withBaseUri('http://www.oboom.com/1/');
+
+        $class = "BrianFaust\\Oboom\\API\\{$name}";
+
+        return new $class($client);
     }
 }
