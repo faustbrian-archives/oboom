@@ -1,13 +1,19 @@
 {
-    "name": "faustbrian/oboom-php-client",
+    "name": "plients/oboom",
     "description": "A OBOOM Client for PHP",
-    "keywords": ["api", "http", "oboom"],
+    "keywords": [
+        "api",
+        "http",
+        "oboom"
+    ],
     "license": "MIT",
-    "authors": [{
-        "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
-    }],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "hello@basecode.sh",
+            "homepage": "https://basecode.sh"
+        }
+    ],
     "require": {
         "php": "^7.1",
         "faustbrian/http": "^1.0"
@@ -18,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\Oboom\\": "src"
+            "Plients\\Oboom\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\Oboom\\": "tests"
+            "Plients\\Tests\\Oboom\\": "tests"
         }
     },
     "config": {
